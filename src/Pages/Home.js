@@ -9,6 +9,8 @@ export default function Home() {
     <div>
         <h1>Home page</h1> 
         <Link to="/about">Go to the About Page</Link> 
+        <Link to="/contact">Go to the contact Page</Link> 
+        
     </div>
   )
 }
