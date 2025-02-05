@@ -8,6 +8,7 @@ function App() {
  
   return (
    <div>
+    <h1>Static content</h1>
     <BrowserRouter>
     <Routes>
       <Route path='/' element ={<Home/>}></Route>
