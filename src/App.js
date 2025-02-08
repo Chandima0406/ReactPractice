@@ -1,23 +1,35 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import Profile from './Profile';
+import { useState, useEffect } from 'react';
 
 function App() {
- 
+  const [count , setcount] = useState(0);
+  //let count = 0;
+
+  const increment = () =>{
+    //count +=1;
+    setcount(count+1);
+  }
+
+  const decriment = () =>{
+    //count -=1
+    setcount(count-1);
+  }
+
+  useEffect(()=>{
+    //what i want to do as a side effect 
+    console.log(`New count is: ${count}`);
+  },[count]  //dependancy array
+
+  )
   return (
-   <div>
-    <h1>Static content</h1>
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element ={<Home/>}></Route>
-      <Route path='/about' element ={<About/>}></Route>
-      <Route path='/profile' element ={<Profile/>}></Route>
-    </Routes>
-    
-    </BrowserRouter>
-   </div>
+    <>
+
+    <span className='title'>My counter</span>
+    <p className='subtitle'>The count is {count}</p>
+    <button onClick={decriment} className='button'>-</button>
+    <button onClick={increment} className='button'>+</button>
+
+    </>
   );
 }
 
